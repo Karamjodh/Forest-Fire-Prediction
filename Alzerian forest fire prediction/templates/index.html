@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algerian Forest Fire Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1d4350, #a43931);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .welcome-container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            color: #f1f1f1;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-box {
+            background: rgba(255,255,255,0.12);
+            padding: 20px;
+            border-radius: 15px;
+            width: 220px;
+            transition: transform 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-6px);
+        }
+
+        .feature-box h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature-box span {
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #ff512f, #f09819);
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(240,152,25,0.5);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #ddd;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-container">
+        <h1>🔥 Welcome to the Algerian Forest Fire Prediction App</h1>
+
+        <p>
+            This application uses machine learning to predict the
+            <strong>Fire Weather Index (FWI)</strong> based on environmental
+            and meteorological conditions.  
+            Our goal is to help assess wildfire risk and support early
+            decision-making.
+        </p>
+
+        <div class="features">
+            <div class="feature-box">
+                <h3>📊 ML-Based Prediction</h3>
+                <span>Accurate wildfire risk estimation</span>
+            </div>
+
+            <div class="feature-box">
+                <h3>🌡 Weather Parameters</h3>
+                <span>Temperature, humidity, wind & rain</span>
+            </div>
+
+            <div class="feature-box">
+                <h3>🔥 Fire Risk Index</h3>
+                <span>FWI score for better insights</span>
+            </div>
+        </div>
+
+        <!-- Change href to your prediction route -->
+        <a href="/predictdata" class="btn">Get Started →</a>
+
+        <footer>
+            <p>© 2025 Algerian Forest Fire Prediction | ML Project</p>
+        </footer>
+    </div>
+
+</body>
+</html>
