@@ -1,9 +1,5 @@
 # 🌲 Forest Fire Prediction using Machine Learning 🔥
 
-![Forest Fire](https://images.unsplash.com/photo-1508898578281-774ac4893f26?auto=format&fit=crop&w=1350&q=80)
-
----
-
 ## 🚀 Project Overview
 
 Forest fires are one of the most devastating natural disasters, causing significant environmental, economic, and human losses every year.  
