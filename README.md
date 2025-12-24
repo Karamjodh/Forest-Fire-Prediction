@@ -1,165 +1,161 @@
-Project Overview
+# 🌲 Forest Fire Prediction using Machine Learning 🔥
 
-Forest fires are one of the most devastating natural disasters, causing significant environmental, economic, and human losses every year. Early prediction and detection are crucial to minimize these damages. This project aims to predict forest fire occurrences and Fire Weather Index (FWI) using historical weather data and fire indices from Algeria.
+![Forest Fire](https://images.unsplash.com/photo-1508898578281-774ac4893f26?auto=format&fit=crop&w=1350&q=80)
+
+---
+
+## 🚀 Project Overview
+
+Forest fires are one of the most devastating natural disasters, causing significant environmental, economic, and human losses every year.  
+Early prediction and detection are crucial to minimize these damages. This project aims to **predict forest fire occurrences and Fire Weather Index (FWI)** using historical weather and fire indices from Algeria.
 
 The dataset consists of environmental variables such as temperature, relative humidity, wind speed, rainfall, and fire weather indices like FFMC, DMC, DC, ISI, BUI, and FWI.
 
-Objective
+---
 
-Classify Fire Events: Identify whether a particular day is prone to a fire (fire vs not fire).
+## 🎯 Objective
 
-Predict Fire Weather Index (FWI): Using environmental features to predict FWI, which is a quantitative measure of fire risk.
+1. **Classify Fire Events**: Predict whether a day is prone to a fire (`fire` vs `not fire`).  
+2. **Predict Fire Weather Index (FWI)**: Quantitative measure of fire risk using environmental features.  
+3. **Visualize Fire Patterns**: Analyze trends, correlations, and regional fire distributions.
 
-Visualize Fire Patterns: Analyze monthly trends, correlations, and regional fire distributions to understand fire dynamics.
+---
 
-Dataset
+## 📊 Dataset
 
-Source: Algerian Forest Fires Dataset (2012)
+- **Source**: Algerian Forest Fires Dataset (2012)  
+- **Number of Records**: 243  
+- **Features**:
 
-Number of Records: 243
+| Feature | Description |
+|---------|-------------|
+| `day` | Day of the month |
+| `month` | Month |
+| `year` | Year |
+| `Temperature` | Daily temperature (°C) |
+| `RH` | Relative Humidity (%) |
+| `Ws` | Wind speed (km/h) |
+| `Rain` | Rainfall (mm/m²) |
+| `FFMC` | Fine Fuel Moisture Code |
+| `DMC` | Duff Moisture Code |
+| `DC` | Drought Code |
+| `ISI` | Initial Spread Index |
+| `BUI` | Build-Up Index |
+| `FWI` | Fire Weather Index (target for regression) |
+| `Classes` | Fire occurrence: `fire` / `not fire` |
+| `Region` | Region ID (0 = Bejaia, 1 = Sidi-Bel Abbes) |
 
-Features:
+---
 
-Feature	Description
-day	Day of the month
-month	Month
-year	Year
-Temperature	Daily temperature (°C)
-RH	Relative Humidity (%)
-Ws	Wind speed (km/h)
-Rain	Rainfall (mm/m²)
-FFMC	Fine Fuel Moisture Code
-DMC	Duff Moisture Code
-DC	Drought Code
-ISI	Initial Spread Index
-BUI	Build-Up Index
-FWI	Fire Weather Index (target for regression)
-Classes	Fire occurrence: fire / not fire
-Region	Region ID (0 = Bejaia, 1 = Sidi-Bel Abbes)
-Data Cleaning and Preprocessing
+## 🧹 Data Cleaning & Preprocessing
 
-Removed null and redundant values.
+- Removed null and redundant values.  
+- Standardized column names.  
+- Converted numerical features to appropriate types.  
+- Encoded fire labels (`fire` / `not fire`) as 1/0 for classification.  
+- Removed highly correlated features (`threshold = 0.85`) to reduce multicollinearity.  
+- Standardized dataset using `StandardScaler` for numerical stability.
 
-Standardized column names.
+---
 
-Converted numerical features to appropriate types (int/float) for modeling.
+## 🔍 Exploratory Data Analysis (EDA)
 
-Consolidated fire labels (fire / not fire) and encoded them as 1/0 for classification.
+- **Histograms**: Feature distributions and outliers.  
+- **Pie Charts**: Class balance visualization.  
+- **Correlation Heatmap**: Relationships between environmental variables and fire occurrence.  
+- **Boxplot**: Distribution of FWI.  
+- **Monthly Fire Patterns**: Seasonal trends in Bejaia and Sidi-Bel Abbes regions.
 
-Removed highly correlated features (threshold = 0.85) to reduce multicollinearity.
+---
 
-Standardized the dataset using StandardScaler for numerical stability.
+## 🤖 Modeling
 
-Exploratory Data Analysis (EDA)
+**Features (`X`)**: Temperature, RH, Wind Speed, Rain, FFMC, DMC, DC, ISI, BUI, Classes, Region.  
+**Target (`Y`)**: FWI (regression) or Classes (classification).
 
-Histograms: Displayed feature distributions to identify skewness or outliers.
+- **Train-Test Split**: 75% training, 25% testing.  
+- **Scaling**: StandardScaler for numerical features.  
+- **Correlation Handling**: Removed highly correlated features.  
 
-Pie Chart: Visualized class balance between fire and not fire.
+**Model Types**:  
+- Classification: Predict fire occurrence.  
+- Regression: Predict Fire Weather Index (FWI).  
+- Algorithms: Linear Regression, Random Forest, Gradient Boosting, Neural Networks.
 
-Correlation Heatmap: Analyzed relationships between environmental variables and fire occurrence.
+---
 
-Boxplot: Examined the distribution of FWI.
+## 📈 Visualizations
 
-Monthly Fire Patterns: Countplots for Bejaia and Sidi-Bel Abbes regions revealed seasonal fire trends.
+- **Feature Distributions**: Histograms for temperature, humidity, wind speed, etc.  
+- **Correlation Heatmap**: Showed inter-feature relationships.  
+- **Boxplot**: Visualized FWI outliers.  
+- **Monthly Fire Trends**: Countplots by region and fire occurrence.
 
-Modeling
+---
 
-Features and Target
+## 💡 Insights
 
-Features (X): Temperature, RH, Wind Speed, Rain, FFMC, DMC, DC, ISI, BUI, Classes, Region.
+- Fire occurrence is higher in July–September.  
+- FWI correlates strongly with FFMC, DMC, ISI, and BUI.  
+- Temperature positively correlates with fire risk; RH negatively correlates.  
+- Regional analysis helps identify localized fire risks.
 
-Target (Y): FWI (for regression) or Classes (for classification).
+---
 
-Train-Test Split
+## 🛠 Usage
 
-Split dataset into training (75%) and testing (25%) sets.
+### 1️⃣ Clone the Repository
 
-Scaling
+Start by cloning this project to your local machine:
 
-Standardized features using StandardScaler.
-
-Correlation Handling
-
-Removed highly correlated features to avoid multicollinearity.
-
-Model Types
-
-Classification: Predict fire occurrence.
-
-Regression: Predict Fire Weather Index (FWI).
-
-Models can include Linear Regression, Random Forest, Gradient Boosting, or Neural Networks.
-
-Visualizations
-
-Feature Distributions: Histograms for temperature, humidity, wind speed, etc.
-
-Correlation Heatmap: Showed inter-feature relationships.
-
-Boxplot: FWI outliers visualization.
-
-Monthly Fire Trends: Countplots separated by region and fire occurrence.
-
-Insights
-
-Fire occurrence is more frequent in certain months (e.g., July–September).
-
-FWI is highly correlated with FFMC, DMC, ISI, and BUI.
-
-Temperature positively correlates with fire risk, while RH (humidity) negatively correlates.
-
-Regional analysis helps understand localized fire risks.
-
-Usage
-
-Clone the repository:
-
+```bash
 git clone https://github.com/yourusername/forest-fire-prediction.git
 cd forest-fire-prediction
+```
 
+---
 
-Install dependencies:
+### 2️⃣ Install Dependencies
 
+Make sure you have Python 3.x installed. Then, install the required packages:
+
+```bash
 pip install -r requirements.txt
+```
 
+> **💡 Tip:** It's recommended to use a virtual environment to avoid conflicts with other Python packages.
 
-Run the Jupyter Notebook:
+---
 
+### 3️⃣ Launch the Notebook
+
+Open Jupyter Notebook and explore the project:
+
+```bash
 jupyter notebook Forest_Fire_Prediction.ipynb
+```
 
+* Navigate through each section:
 
-Explore:
+  * **Data Cleaning & Preprocessing**
+  * **Exploratory Data Analysis (EDA)**
+  * **Regression & Classification Modeling**
+  * **Visualization of Fire Patterns**
 
-Data Cleaning
+---
 
-EDA
+### 4️⃣ Optional: Run a Script (if available)
 
-Regression and Classification modeling
+If you prefer running a script instead of using the notebook:
 
-Fire pattern visualization
+```bash
+python forest_fire_prediction.py
+```
 
-Technologies Used
+---
 
-Python 3.x
+### 🔗 Additional Notes
 
-Libraries: pandas, numpy, matplotlib, seaborn, scikit-learn
-
-Jupyter Notebook for experimentation and visualization
-
-Future Enhancements
-
-Integrate real-time satellite and weather data for live fire prediction.
-
-Apply advanced neural networks or LSTM models for time-series prediction.
-
-Develop a web dashboard for visualizing fire risk dynamically.
-
-Implement feature importance analysis to better understand contributing factors.
-
-Author
-
-Karamjodh Singh
-
-Machine Learning & Data Science Enthusiast
-
-GitHub: https://github.com/Karamjodh
+* Ensure all dataset files are in the `data/` folder.
+* You can modify the notebook to test **new machine learning models** or **tweak hyperparameters**.
+* Visualizations will automatically render within the notebook.
